@@ -1,59 +1,106 @@
-# VeterinariaApp
+# 🐾 Sistema PetLife – Gestión Veterinaria
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.19.
+Aplicación web desarrollada con **Angular** que permite gestionar mascotas y citas dentro de una clínica veterinaria.
+El sistema facilita el registro de mascotas, la visualización de registros y la programación de citas médicas.
 
-## Development server
+# Tecnologías utilizadas
 
-To start a local development server, run:
+El proyecto fue desarrollado utilizando las siguientes tecnologías:
 
-```bash
+* **Angular**
+* **TypeScript**
+* **Bootstrap**
+* **HTML5**
+* **CSS3**
+
+Estas tecnologías permiten crear una aplicación web moderna, modular y escalable.
+
+# Arquitectura del proyecto
+
+El proyecto está organizado siguiendo una **arquitectura modular recomendada en Angular**, separando responsabilidades para facilitar el mantenimiento y la escalabilidad.
+
+Estructura principal:
+
+src/app
+├── core
+│   └── models
+│
+├── features
+│   ├── mascotas
+│   │   ├── pages
+│   │   └── services
+│   │
+│   └── citas
+│       ├── pages
+│       └── services
+│
+├── shared
+│   ├── directives
+│   └── pipes
+
+Esta estructura permite:
+
+* Separar funcionalidades por módulos
+* Reutilizar código
+* Mantener una organización clara del proyecto
+# Funcionalidades del sistema
+
+El sistema permite realizar las siguientes acciones:
+
+✔ Registrar nuevas mascotas
+✔ Visualizar la lista de mascotas registradas
+✔ Agendar citas veterinarias
+✔ Visualizar las citas registradas
+✔ Navegar entre secciones mediante una barra de navegación
+✔ Visualización de datos en tablas con Bootstrap
+✔ Uso de un **Pipe personalizado** para formatear fechas
+✔ Uso de una **Directiva personalizada** para resaltar citas próximas
+
+# Programación Orientada a Objetos
+
+Durante el desarrollo del sistema se aplicaron conceptos fundamentales de **Programación Orientada a Objetos (POO)**:
+
+* **Abstracción**
+* **Herencia**
+* **Encapsulamiento**
+* **Interfaces**
+
+Ejemplo aplicado en el proyecto:
+
+Persona (Clase abstracta)
+⬇
+Duenio (Clase que hereda de Persona)
+
+Esto permite reutilizar atributos y comportamientos, mejorando la organización del código.
+
+# Instalación del proyecto
+
+Para ejecutar el proyecto en tu entorno local sigue estos pasos:
+
+### 1. Clonar el repositorio
+
+git clone repositorio
+
+### 2. Instalar dependencias
+
+npm install
+
+### 3. Ejecutar la aplicación
+
 ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### 4. Abrir en el navegador
 
-## Code scaffolding
+http://localhost:4200
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+---
 
-```bash
-ng generate component component-name
-```
+# Evidencias de funcionamiento
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+El sistema permite:
 
-```bash
-ng generate --help
-```
+1. Registrar mascotas
+2. Visualizar lista de mascotas
+3. Agendar citas
+4. Visualizar citas programadas
 
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.

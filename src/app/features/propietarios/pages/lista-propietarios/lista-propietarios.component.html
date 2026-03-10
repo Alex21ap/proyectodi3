@@ -1,0 +1,75 @@
+<div class="container-fluid p-4">
+
+  <div class="d-flex justify-content-between align-items-center mb-4">
+
+    <div>
+      <h2 class="display-6 fw-bold mb-1">Lista de Propietarios</h2>
+      <p class="text-secondary mb-0">
+        Gestión de dueños de mascotas registrados en el sistema
+      </p>
+    </div>
+
+    <a class="btn btn-primary" routerLink="/registro-propietarios">
+      + Nuevo Propietario
+    </a>
+
+  </div>
+
+  <div class="table-responsive">
+
+    <table class="table table-hover align-middle">
+
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Teléfono</th>
+          <th>Email</th>
+          <th class="text-center">Acciones</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr *ngFor="let propietario of propietarios">
+
+          <td class="fw-semibold">{{ propietario.id }}</td>
+          <td>{{ propietario.nombre }}</td>
+          <td>{{ propietario.telefono }}</td>
+          <td>{{ propietario.email }}</td>
+
+          <td class="text-center">
+
+            <div class="acciones">
+
+              <button
+                class="btn btn-primary btn-sm"
+                (click)="editar(propietario.id)">
+                Editar
+              </button>
+
+              <button
+                class="btn btn-danger btn-sm"
+                (click)="eliminar(propietario.id)">
+                Eliminar
+              </button>
+
+            </div>
+
+          </td>
+
+        </tr>
+
+        <tr *ngIf="propietarios.length === 0">
+          <td colspan="5" class="text-center text-secondary py-4">
+            No hay propietarios registrados
+          </td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>

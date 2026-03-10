@@ -1,0 +1,86 @@
+<div class="container-fluid p-4">
+
+  <div class="d-flex justify-content-between align-items-center mb-4">
+
+    <div>
+      <h2 class="display-6 fw-bold mb-1">Lista de Mascotas</h2>
+      <p class="text-secondary mb-0">
+        Mascotas registradas en el sistema
+      </p>
+    </div>
+
+  </div>
+
+  <div class="table-responsive">
+
+    <table class="table table-hover align-middle">
+
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Especie</th>
+          <th>Raza</th>
+          <th>Edad</th>
+          <th>Dueño</th>
+          <th class="text-center">Acciones</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr *ngFor="let mascota of mascotas">
+
+          <td class="fw-semibold">{{ mascota.nombre }}</td>
+          <td>{{ mascota.especie }}</td>
+          <td>{{ mascota.raza }}</td>
+          <td>{{ mascota.edad }} años</td>
+
+          <td>
+            {{ obtenerNombreDuenio(mascota.duenioId) }}
+          </td>
+
+          <td class="text-center">
+
+            <div class="acciones">
+
+              <button 
+                class="btn btn-info btn-sm"
+                (click)="verHistorial(mascota)">
+                Historial
+              </button>
+
+              <button 
+                class="btn btn-warning btn-sm"
+                (click)="editarMascota(mascota)">
+                Editar
+              </button>
+
+              <button 
+                class="btn btn-danger btn-sm"
+                (click)="eliminarMascota(mascota)">
+                Eliminar
+              </button>
+
+            </div>
+
+          </td>
+
+        </tr>
+
+        <tr *ngIf="mascotas.length === 0">
+          <td colspan="6" class="text-center text-secondary py-4">
+            No hay mascotas registradas
+          </td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+  <p class="text-secondary mt-3 small">
+    Total de mascotas: {{ mascotas.length }}
+  </p>
+
+</div>

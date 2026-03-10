@@ -1,0 +1,89 @@
+<div class="container-fluid py-5 bg-light">
+  <div class="row justify-content-center">
+    <div class="col-12 col-xl-10">
+
+      <div class="mb-4">
+        <h2 class="display-6 fw-bold mb-1">
+          {{ editando ? 'Editar Cita' : 'Agendar Cita' }}
+        </h2>
+
+        <p class="text-secondary mb-0">
+          {{ editando ? 'Modificar datos de la cita' : 'Programe una nueva cita para una mascota' }}
+        </p>
+      </div>
+
+      <form [formGroup]="formulario" (ngSubmit)="guardar()">
+
+        <div class="row g-4">
+
+          <div class="col-md-3">
+            <label class="form-label fw-semibold">ID de la Mascota</label>
+
+            <input 
+            type="number"
+            class="form-control form-control-lg"
+            formControlName="mascotaId">
+          </div>
+
+          <div class="col-md-3">
+            <label class="form-label fw-semibold">Fecha de la cita</label>
+
+            <input 
+            type="date"
+            class="form-control form-control-lg"
+            formControlName="fecha">
+          </div>
+
+          <div class="col-md-3">
+            <label class="form-label fw-semibold">Hora</label>
+
+            <input 
+            type="time"
+            class="form-control form-control-lg"
+            formControlName="hora">
+          </div>
+
+          <div class="col-md-3">
+            <label class="form-label fw-semibold">Motivo</label>
+
+            <input 
+            type="text"
+            class="form-control form-control-lg"
+            formControlName="motivo">
+          </div>
+
+          <div class="col-12">
+            <label class="form-label fw-semibold">Observaciones</label>
+
+            <textarea
+            class="form-control"
+            rows="2"
+            formControlName="observaciones"></textarea>
+          </div>
+
+        </div>
+
+        <div class="d-flex gap-3 justify-content-end mt-5">
+
+          <button
+          type="button"
+          class="btn btn-outline-secondary btn-lg px-4"
+          routerLink="/lista-citas">
+          Cancelar
+          </button>
+
+          <button
+          type="submit"
+          class="btn btn-primary btn-lg px-5">
+
+          {{ editando ? 'Actualizar cita' : 'Agendar cita' }}
+
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</div>

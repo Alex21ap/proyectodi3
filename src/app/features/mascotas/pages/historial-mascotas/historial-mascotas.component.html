@@ -1,0 +1,33 @@
+<div class="container p-4">
+
+  <h2 class="mb-4">Historial de Atención</h2>
+
+  <table class="table table-bordered">
+
+    <thead>
+      <tr>
+        <th>Fecha</th>
+        <th>Hora</th>
+        <th>Motivo</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <tr *ngFor="let cita of citas">
+        <td>{{ cita.fecha }}</td>
+        <td>{{ cita.hora }}</td>
+        <td>{{ cita.motivo }}</td>
+      </tr>
+
+      <tr *ngIf="citas.length === 0">
+        <td colspan="3" class="text-center">
+          No hay citas registradas para esta mascota
+        </td>
+      </tr>
+
+    </tbody>
+
+  </table>
+
+</div>

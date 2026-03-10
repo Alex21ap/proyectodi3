@@ -1,0 +1,127 @@
+.container-fluid {
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: calc(100vh - 80px);
+  background-color: #f8f9fa;
+  border-radius: 24px;
+}
+
+.table {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.table thead th {
+  background-color: #e9ecef;
+  color: #495057;
+  font-weight: 600;
+  border-bottom: 2px solid #dee2e6;
+  padding: 1rem;
+}
+
+.table tbody td {
+  padding: 1rem;
+  vertical-align: middle;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(52, 152, 219, 0.05);
+  transition: background-color 0.2s ease;
+}
+
+.btn {
+  border-radius: 10px;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+.btn-sm {
+  padding: 0.4rem 1rem;
+}
+
+.btn-primary {
+  background-color: #3498db;
+  border-color: #3498db;
+  border-radius: 12px;
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+}
+
+.btn-primary:hover {
+  background-color: #2980b9;
+  border-color: #2980b9;
+}
+
+.btn-warning {
+  background-color: #f39c12;
+  border-color: #f39c12;
+  color: white;
+}
+
+.btn-warning:hover {
+  background-color: #d68910;
+  border-color: #d68910;
+}
+
+.btn-danger {
+  background-color: #e74c3c;
+  border-color: #e74c3c;
+}
+
+.btn-danger:hover {
+  background-color: #c0392b;
+  border-color: #c0392b;
+}
+
+.btn-info {
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+  color: white;
+}
+
+.btn-info:hover {
+  background-color: #138496;
+  border-color: #138496;
+}
+
+.table td .btn {
+  width: 110px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .container-fluid {
+    border-radius: 0;
+    padding: 1.5rem !important;
+  }
+
+  .display-6 {
+    font-size: 1.8rem;
+  }
+
+  .d-flex.justify-content-between {
+    flex-direction: column;
+    align-items: start !important;
+    gap: 1rem;
+  }
+}
+.acciones {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.acciones .btn {
+  width: 110px;
+}

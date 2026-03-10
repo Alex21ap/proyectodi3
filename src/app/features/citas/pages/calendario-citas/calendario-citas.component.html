@@ -1,0 +1,72 @@
+<div class="container-fluid py-5">
+
+  <div class="row justify-content-center">
+
+    <div class="col-12 col-xl-10">
+
+      <div class="mb-4">
+        <h2 class="display-6 fw-bold mb-1">Calendario de Citas</h2>
+        <p class="text-secondary mb-0">Visualiza todas las citas programadas</p>
+      </div>
+
+      <div class="tabla-card">
+
+        <div class="table-responsive">
+
+          <table class="table table-hover align-middle mb-0">
+
+            <thead>
+              <tr>
+                <th>Fecha</th>
+                <th>Hora</th>
+                <th>Mascota</th>
+                <th>Propietario</th>
+                <th>Motivo</th>
+              </tr>
+            </thead>
+
+            <tbody>
+
+              <tr *ngFor="let cita of citas">
+
+                <td>
+                  {{ cita.fecha | date:'dd/MM/yyyy' }}
+                </td>
+
+                <td>
+                  {{ cita.hora }}
+                </td>
+
+                <td class="fw-semibold">
+                  {{ obtenerNombreMascota(cita.mascotaId) }}
+                </td>
+
+                <td>
+                  {{ obtenerNombrePropietario(cita.propietarioId) }}
+                </td>
+
+                <td>
+                  {{ cita.motivo }}
+                </td>
+
+              </tr>
+
+              <tr *ngIf="citas.length === 0">
+                <td colspan="5" class="text-center text-secondary py-4">
+                  No hay citas agendadas
+                </td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,62 @@
+<nav class="navbar navbar-expand-lg sticky-top custom-navbar">
+  <div class="container">
+
+    <a class="navbar-brand logo" routerLink="/">
+      <span class="icon">🐾</span> PetLife
+    </a>
+
+    <button class="navbar-toggler" type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <div *ngIf="!isLoggedIn" class="ms-auto">
+        <button class="btn btn-primary" routerLink="/login">
+          Iniciar sesión
+        </button>
+      </div>
+      <ng-container *ngIf="isLoggedIn">
+
+        <ul class="navbar-nav ms-auto nav-links">
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/propietarios" routerLinkActive="active">
+              Propietarios
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/registro-mascota" routerLinkActive="active">
+              Registrar Mascota
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/lista-mascotas" routerLinkActive="active">
+              Ver Mascotas
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/lista-citas" routerLinkActive="active">
+              Citas Registradas
+            </a>
+          </li>
+
+        </ul>
+
+        <button class="btn-appointment ms-3" routerLink="/agendar-cita">
+          Agendar cita
+        </button>
+
+        <button class="btn btn-danger ms-2" (click)="logout()">
+          Cerrar sesión
+        </button>
+
+      </ng-container>
+
+    </div>
+
+  </div>
+</nav>

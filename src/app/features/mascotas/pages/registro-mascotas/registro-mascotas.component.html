@@ -1,0 +1,101 @@
+<div class="container-fluid py-5 bg-light">
+  <div class="row justify-content-center">
+    <div class="col-12 col-xl-10">
+
+      <div class="mb-4">
+        <h2 class="display-6 fw-bold mb-1">
+          {{ mascotaService.mascotaSeleccionada ? 'Editar Mascota' : 'Registro de Mascota' }}
+        </h2>
+
+        <p class="text-secondary mb-0">
+          Complete todos los campos para agregar o editar una mascota
+        </p>
+      </div>
+
+      <form [formGroup]="formulario" (ngSubmit)="registrarMascota()">
+
+        <div class="row g-4">
+
+          <div class="col-md-6">
+            <label class="form-label fw-semibold">Nombre</label>
+            <input 
+              type="text" 
+              class="form-control form-control-lg"
+              formControlName="nombre">
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label fw-semibold">Especie</label>
+            <select 
+              class="form-select form-select-lg"
+              formControlName="especie">
+
+              <option value="">Seleccione especie</option>
+              <option value="perro">Perro</option>
+              <option value="gato">Gato</option>
+              <option value="conejo">Conejo</option>
+              <option value="ave">Ave</option>
+              <option value="otro">Otro</option>
+
+            </select>
+          </div>
+
+          <div class="col-md-4">
+            <label class="form-label fw-semibold">Raza</label>
+            <input 
+              type="text" 
+              class="form-control form-control-lg" 
+              formControlName="raza">
+          </div>
+
+          <div class="col-md-4">
+            <label class="form-label fw-semibold">Edad</label>
+            <input 
+              type="number" 
+              class="form-control form-control-lg" 
+              formControlName="edad">
+          </div>
+
+          <div class="col-md-4">
+            <label class="form-label fw-semibold">ID del Dueño</label>
+            <input 
+              type="number" 
+              class="form-control form-control-lg" 
+              formControlName="duenioId">
+          </div>
+
+          <div class="col-12">
+            <label class="form-label fw-semibold">Observaciones</label>
+            <textarea 
+              class="form-control"
+              rows="3"
+              formControlName="observaciones">
+            </textarea>
+          </div>
+
+        </div>
+
+        <div class="d-flex gap-3 justify-content-end mt-5">
+
+          <button 
+            type="button" 
+            class="btn btn-outline-secondary btn-lg px-4"
+            (click)="cancelar()">
+            Cancelar
+          </button>
+
+          <button 
+            type="submit" 
+            class="btn btn-primary btn-lg px-5">
+
+            {{ mascotaService.mascotaSeleccionada ? 'Actualizar' : 'Registrar' }}
+
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,87 @@
+:host .container-fluid {
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: calc(100vh - 80px);
+  background-color: #f8f9fa;
+  border-radius: 24px;
+}
+
+.form-card{
+  background:white;
+  border-radius:20px;
+  padding:2rem;
+  box-shadow:0 10px 30px rgba(0,0,0,0.05);
+  animation:fadeIn .5s ease;
+}
+
+.form-control-lg, .form-select-lg {
+  border-radius:12px;
+  border:1px solid #dee2e6;
+  padding:0.75rem 1rem;
+  font-size:1rem;
+  transition:all .2s ease;
+}
+
+.form-control-lg:focus, .form-select-lg:focus {
+  border-color:#3498db;
+  box-shadow:0 0 0 0.2rem rgba(52,152,219,0.25);
+  outline:none;
+}
+
+
+.form-label{
+  font-size:0.95rem;
+  margin-bottom:0.4rem;
+  color:#495057;
+}
+
+.btn{
+  border-radius:12px;
+  font-weight:600;
+  transition:all .25s ease;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 6px 18px rgba(0,0,0,0.15);
+}
+
+.btn:active{
+  transform:scale(.96);
+}
+
+.btn-primary{
+  background-color:#3498db;
+  border-color:#3498db;
+  padding:0.75rem 2rem;
+}
+
+.btn-primary:hover{
+  background-color:#2980b9;
+  border-color:#2980b9;
+}
+
+.btn-outline-secondary{
+  border:2px solid #dee2e6;
+  color:#6c757d;
+  padding:0.75rem 2rem;
+}
+
+.btn-outline-secondary:hover{
+  background-color:#e9ecef;
+  border-color:#adb5bd;
+  color:#495057;
+}
+
+@media (max-width:768px){
+
+  :host .container-fluid{
+    border-radius:0;
+    padding:1.5rem !important;
+  }
+
+  .display-6{
+    font-size:1.8rem;
+  }
+
+}

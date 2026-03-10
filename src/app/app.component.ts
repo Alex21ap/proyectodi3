@@ -1,12 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
+
+import { Header } from './shared/components/header/header';
+import { Footer } from './shared/components/footer/footer';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [CommonModule, RouterOutlet, Header, Footer],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'veterinaria-app';
+export class AppComponent implements OnInit {
+
+  isLoggedIn = false;
+
+  ngOnInit() {
+    const userLocal = localStorage.getItem('user');
+    const userSession = sessionStorage.getItem('user');
+
+    this.isLoggedIn = !!(userLocal || userSession);
+  }
+
 }

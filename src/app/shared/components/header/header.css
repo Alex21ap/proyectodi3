@@ -1,52 +1,53 @@
-:host {
-  display: block;
-}
-
-:host .custom-navbar {
+.custom-navbar {
   background-color: var(--bs-body-bg);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   padding: 1rem 2rem;
   border-bottom: 1px solid var(--bs-border-color);
-  transition: background-color 0.3s ease;
 }
 
-:host .navbar-brand.logo {
+.logo {
   font-size: 1.5rem;
   font-weight: bold;
   color: var(--bs-body-color);
+  text-decoration: none;
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-:host .icon {
+.icon {
   font-size: 1.8rem;
 }
 
-:host .nav-links .nav-link {
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
   color: var(--bs-secondary-color);
   font-weight: 500;
   transition: color 0.3s;
-  padding: 0.5rem 1rem;
 }
 
-:host .nav-links .nav-link:hover,
-:host .nav-links .nav-link.active {
+.nav-links a:hover,
+.nav-links .active {
   color: #3498db;
 }
 
-:host .btn-appointment {
+.btn-appointment {
   background-color: #27ae60;
   color: white;
   border: none;
+  margin-left: 1rem;
   padding: 0.6rem 1.2rem;
   border-radius: 25px;
   cursor: pointer;
   font-weight: 600;
-  transition: transform 0.2s, background-color 0.2s;
 }
 
-:host .btn-appointment:hover {
+.btn-appointment:hover {
   transform: scale(1.05);
   background-color: #219150;
 }
